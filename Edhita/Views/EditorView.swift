@@ -64,6 +64,9 @@ struct EditorView: View {
                 ? item.content : NSLocalizedString("The item cannot be edited", comment: "")
         }
         .onAppear {
+            CustomerIOTracker.screen("Editor")
+        }
+        .onAppear {
             UITextView.appearance().backgroundColor = .clear
         }.onDisappear {
             UITextView.appearance().backgroundColor = nil

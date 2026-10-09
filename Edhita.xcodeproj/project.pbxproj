@@ -40,6 +40,8 @@
 		9BFDA6D9289BEB5C007EE921 /* AdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFDA6D8289BEB5C007EE921 /* AdBannerView.swift */; };
 		9BFDA6DC289BF6EB007EE921 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BFDA6DE289BF6EB007EE921 /* Localizable.strings */; };
 		9BFDA6E1289D3C8C007EE921 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFDA6E0289D3C8C007EE921 /* PlaceholderView.swift */; };
+		CC00000000000000000000A3 /* DataPipelines in Frameworks */ = {isa = PBXBuildFile; productRef = CC00000000000000000000A2 /* DataPipelines */; };
+		CC00000000000000000000A5 /* CustomerIOTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000000000000000000A4 /* CustomerIOTracker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,8 @@
 		9BFDA6DD289BF6EB007EE921 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9BFDA6DF289BF6EC007EE921 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9BFDA6E0289D3C8C007EE921 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		CC00000000000000000000A4 /* CustomerIOTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerIOTracker.swift; sourceTree = "<group>"; };
+		CC00000000000000000000A6 /* CustomerIO.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CustomerIO.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 				9B8FD4922B0A4A56009950B9 /* GoogleMobileAds in Frameworks */,
 				9BFDA6B128928604007EE921 /* Ink in Frameworks */,
 				9BFDA6C4289AB0B6007EE921 /* Introspect in Frameworks */,
+				CC00000000000000000000A3 /* DataPipelines in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				9B376929288D8D46002392EB /* Edhita */,
+				CC00000000000000000000A6 /* CustomerIO.xcconfig */,
 				9B37693A288D8D47002392EB /* EdhitaTests */,
 				9B376944288D8D47002392EB /* EdhitaUITests */,
 				9B376928288D8D46002392EB /* Products */,
@@ -198,6 +204,7 @@
 				9BFDA6BE28995123007EE921 /* Settings.swift */,
 				9BFDA6D4289BEAAB007EE921 /* Constants.swift */,
 				9B8FD48E2B0A4976009950B9 /* AdManager.swift */,
+				CC00000000000000000000A4 /* CustomerIOTracker.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -242,6 +249,7 @@
 				9BFDA6B028928604007EE921 /* Ink */,
 				9BFDA6C3289AB0B6007EE921 /* Introspect */,
 				9B8FD4912B0A4A56009950B9 /* GoogleMobileAds */,
+				CC00000000000000000000A2 /* DataPipelines */,
 			);
 			productName = Edhita;
 			productReference = 9B376927288D8D46002392EB /* Edhita.app */;
@@ -320,6 +328,7 @@
 				9BFDA6AF28928604007EE921 /* XCRemoteSwiftPackageReference "Ink" */,
 				9BFDA6C2289AB0B6007EE921 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 				9B8FD4902B0A4A56009950B9 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				CC00000000000000000000A1 /* XCRemoteSwiftPackageReference "customerio-ios" */,
 			);
 			productRefGroup = 9B376928288D8D46002392EB /* Products */;
 			projectDirPath = "";
@@ -388,6 +397,7 @@
 				9B8FD48F2B0A4976009950B9 /* AdManager.swift in Sources */,
 				9BFDA6E1289D3C8C007EE921 /* PlaceholderView.swift in Sources */,
 				9BFDA6D5289BEAAB007EE921 /* Constants.swift in Sources */,
+				CC00000000000000000000A5 /* CustomerIOTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +457,7 @@
 /* Begin XCBuildConfiguration section */
 		9B376949288D8D47002392EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC00000000000000000000A6 /* CustomerIO.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -508,6 +519,7 @@
 		};
 		9B37694A288D8D47002392EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC00000000000000000000A6 /* CustomerIO.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -759,6 +771,14 @@
 				kind = branch;
 			};
 		};
+		CC00000000000000000000A1 /* XCRemoteSwiftPackageReference "customerio-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/customerio/customerio-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -776,6 +796,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9BFDA6C2289AB0B6007EE921 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
 			productName = Introspect;
+		};
+		CC00000000000000000000A2 /* DataPipelines */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC00000000000000000000A1 /* XCRemoteSwiftPackageReference "customerio-ios" */;
+			productName = DataPipelines;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

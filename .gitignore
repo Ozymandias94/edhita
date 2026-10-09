@@ -91,3 +91,6 @@ iOSInjectionProject/
 
 bin/swift-format
 Edhita/Models/Constants.swift
+
+# Customer.io write key (local only)
+CustomerIO.local.xcconfig

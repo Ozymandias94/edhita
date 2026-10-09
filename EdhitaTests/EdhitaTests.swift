@@ -19,6 +19,23 @@ class EdhitaTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    func testWriteKeyIgnoresMissingEmptyAndUnexpandedValues() {
+        XCTAssertNil(CustomerIOTracker.writeKey(from: nil))
+        XCTAssertNil(CustomerIOTracker.writeKey(from: ["CIOCDPWriteKey": ""]))
+        XCTAssertNil(CustomerIOTracker.writeKey(from: ["CIOCDPWriteKey": "$(CIO_CDP_WRITE_KEY)"]))
+        XCTAssertEqual(CustomerIOTracker.writeKey(from: ["CIOCDPWriteKey": "abc"]), "abc")
+    }
+
+    func testUserIDIsFixedInDebugAndPersistedInRelease() {
+        let defaults = UserDefaults(suiteName: "CustomerIOTrackerTests")!
+        defaults.removePersistentDomain(forName: "CustomerIOTrackerTests")
+        XCTAssertEqual(
+            CustomerIOTracker.userID(defaults: defaults, isDebug: true), "edhita-demo-user")
+        let first = CustomerIOTracker.userID(defaults: defaults, isDebug: false)
+        XCTAssertEqual(CustomerIOTracker.userID(defaults: defaults, isDebug: false), first)
+        XCTAssertNotEqual(first, "edhita-demo-user")
+    }
+
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.

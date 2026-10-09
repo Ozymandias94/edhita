@@ -1,0 +1,10 @@
+// Customer.io CDP source write key (Data In).
+// Leave empty here: put the real key in CustomerIO.local.xcconfig (gitignored).
+// Without a key the app runs normally and sends nothing to Customer.io.
+//
+// To keep sandbox and production apart, use per-configuration lines in the local file:
+//   CIO_CDP_WRITE_KEY[config=Debug] = <sandbox key>
+//   CIO_CDP_WRITE_KEY[config=Release] = <production key>
+CIO_CDP_WRITE_KEY =
+
+#include? "CustomerIO.local.xcconfig"

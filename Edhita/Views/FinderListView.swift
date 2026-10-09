@@ -168,6 +168,9 @@ struct FinderListView: View {
                     },
                     onSave: { name in
                         list.addItem(name: name, isDirectory: false)
+                        CustomerIOTracker.track(
+                            "File Created",
+                            properties: ["file_extension": (name as NSString).pathExtension])
                     },
                     text: ""
                 )
@@ -225,6 +228,7 @@ struct FinderListView: View {
         }
         .onAppear {
             list.refresh()
+            CustomerIOTracker.screen("File List")
         }
         .environment(\.editMode, .constant(isEditing ? .active : .inactive))
     }

@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CIOCDPWriteKey</key>
+	<string>$(CIO_CDP_WRITE_KEY)</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-6374739630212171~7866879841</string>
 	<key>ITSAppUsesNonExemptEncryption</key>

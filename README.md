@@ -53,3 +53,14 @@ Year | Version | Technology | Branch
 
 [@tnantoka](https://twitter.com/tnantoka)
 
+
+## Customer.io (Data In)
+
+The app can send identify / track / screen events to a Customer.io CDP source (EU region).
+The write key is read from a local, gitignored file, so nothing is sent without it:
+
+```sh
+echo 'CIO_CDP_WRITE_KEY = <your CDP source write key>' > CustomerIO.local.xcconfig
+```
+
+Then build and run in Xcode. Debug builds identify as `edhita-demo-user`; creating a file sends a `File Created` event.
